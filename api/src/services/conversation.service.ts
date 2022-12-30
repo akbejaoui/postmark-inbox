@@ -8,7 +8,7 @@ class ConversationService {
     saveEmail = async (data: ObjectType<string>, mailMeta: ObjectType<any>) => {
         const emailObject: DiscussionInterface = {
             messageId: mailMeta.MessageID,
-            type: EmailEventTypeEnum.BROADCAST,
+            type: EmailEventTypeEnum.OUTBOUND,
             from: data.from,
             to: data.to,
             textContent: data.textContent,

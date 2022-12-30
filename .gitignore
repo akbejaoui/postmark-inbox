@@ -4,3 +4,4 @@ mongodb
 dist
 .env
 .eslintcache
+.DS_Store

@@ -16,7 +16,7 @@ const EmailService = {
                 ReplyTo: "9d622729324d1bebebd40c4f2ef880ab@inbound.postmarkapp.com",
                 Subject: data.subject,
                 TextBody: data.textContent,
-                MessageStream: EmailEventTypeEnum.BROADCAST,
+                MessageStream: EmailEventTypeEnum.OUTBOUND,
             })
     
             return response
