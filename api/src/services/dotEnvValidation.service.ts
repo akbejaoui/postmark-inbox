@@ -9,6 +9,7 @@ export class DotEnvValidationService {
             {
                 NODE_ENV: str({ choices: ["development", "test", "production"] }),
                 MONGODB_URI: url(),
+                POSTMARKAPP_TOKEN: str(),
             },
             {
                 reporter: ({ errors }: { errors: object; env: any }) => {

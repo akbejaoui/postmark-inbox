@@ -12,6 +12,7 @@
       "watch-ts": "tsc-watch --onSuccess \"npm run run:watch\"",
       "pre-commit": "npm run eslint-fix",
       "test": "jest",
+      "coverage": "jest --coverage",
       "pre-push": "npm run test"
     },
     "devDependencies": {
