@@ -10,6 +10,9 @@ export const nodeEnv = process.env.NODE_ENV
 export const isTest = process.env.NODE_ENV === "test"
 export const isDev = process.env.NODE_ENV === "development"
 
+// Postmark token
+export const POSTMARK_TOKEN = process.env.POSTMARKAPP_TOKEN
+
 
 // DB
 export const mongoDbUri = process.env.MONGODB_URI
