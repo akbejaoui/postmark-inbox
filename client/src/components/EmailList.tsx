@@ -21,6 +21,16 @@ const EmailDetails = ({ isLoading, subject, thread }: EmailDetailsType) => {
         return getFirstChar(from).toUpperCase() ?? "-"
     }
 
+    //* better use moment
+    const formatDate = (textDate: string) => {
+        const padTwoDigits = (value: number) => value.toString().padStart(2, "0")
+
+        const date = new Date(textDate)
+        return `${padTwoDigits(date.getDate())}/${padTwoDigits(date.getMonth() + 1)}/${date.getFullYear()} ${padTwoDigits(date.getHours())}:${padTwoDigits(
+            date.getMinutes()
+        )}`
+    }
+
     return (
         <>
             <List.Item
@@ -49,7 +59,7 @@ const EmailDetails = ({ isLoading, subject, thread }: EmailDetailsType) => {
                                 <span>to: {thread.to}</span>
                             </div>
                             <p className="text-md py-10 border border-gray-300 px-2 my-2 rounded-lg">{thread.textContent}</p>
-                            <span className="text-xs text-gray-500">sent: {thread.date}</span>
+                            <span className="text-xs text-gray-500">sent: {formatDate(thread.date)}</span>
                         </Card>
                     ))}
                 </List.Item>

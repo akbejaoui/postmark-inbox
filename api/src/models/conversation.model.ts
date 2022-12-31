@@ -29,5 +29,6 @@ ConversationSchema.methods.addReply = async function (reply: DiscussionInterface
     return await this.save()
 }
 
+ConversationSchema.index({ subject: 1, "thread.messageId": 1 })
 
 export default mongoose.model<ConversationDocument, ConversationModelInterface>("Conversation", ConversationSchema)

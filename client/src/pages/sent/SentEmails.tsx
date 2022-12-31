@@ -17,7 +17,9 @@ const SentEmails = () => {
             const sentDiscussions: ConversationInterface[] = []
 
             data.forEach(({subject, thread}: { subject: string, thread: DiscussionInterface[]}) => {
-                thread.filter(({ type }) => type === "abejaoui-workerbase").map(((data: any) => sentDiscussions.push({ subject, thread: [data]})))
+                thread.filter(({ type }) => type === "abejaoui-workerbase")
+                    .sort((newDiscussion, oldDiscussion) => new Date(newDiscussion.date).getTime() - new Date(oldDiscussion.date).getTime())
+                    .map(((data: any) => sentDiscussions.push({ subject, thread: [data]})))
             });
 
             setConversations(sentDiscussions)
